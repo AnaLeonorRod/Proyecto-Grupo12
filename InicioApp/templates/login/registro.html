@@ -1,0 +1,38 @@
+{% extends "login/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">INICIAR SESION</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Tienes una cuenta?</h3>
+		      	<form action="#" class="signin-form" method="POST" >
+					{% csrf_token %}
+					<table>
+					{% for form in FormReg %}
+					<tr>
+						<td> {{ form.label }}</td>	
+						<td>{{ form }}</td>
+					</tr>
+					{% endfor %}					
+					</table>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Registrarse</button>
+	            </div>
+				  </form>
+	            <div class="form-group d-md-flex">
+	            	
+					<div class="w-100 text-center">
+						<p>Tiene una cuenta?? <a href="/login" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span>INICIE SESION</a></p>
+					</div>
+	            </div>
+	            
+		      </div>
+				</div>
+			</div>
+
+{% endblock %}
