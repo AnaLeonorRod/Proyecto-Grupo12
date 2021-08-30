@@ -41,11 +41,12 @@ INSTALLED_DJANGO = [
 ] 
 
 APP_LOCAL = [
-    'InicioApp'
+    'InicioApp',
+    'appCuestionarios',
+    'appPreguntas',
+    'appRespuestas',
 ]
 INSTALLED_APPS = INSTALLED_DJANGO + APP_LOCAL
-
-
 
 
 MIDDLEWARE = [

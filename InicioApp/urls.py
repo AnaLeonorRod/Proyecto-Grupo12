@@ -1,6 +1,7 @@
 from django.urls import path
 from InicioApp import views
 from django.contrib.auth import views as auth_Views
+from appCuestionarios.views import cuest_view
 
 
 urlpatterns = [
@@ -10,4 +11,5 @@ urlpatterns = [
     path('logout/', auth_Views.LogoutView.as_view(), name = 'logout'),
     path('admi/', views.administrador, name= 'admi'),
     path('user/', views.usuario, name= 'user'),
+    path('<pk>/juego/', cuest_view, name='quiz-view'),
 ]
