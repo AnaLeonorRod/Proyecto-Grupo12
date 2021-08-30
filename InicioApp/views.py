@@ -1,8 +1,16 @@
+from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
+
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+
+
+
+@login_required(login_url= '/')
 def inicio(request):
-    return render(request, "index.html")
+    return render(request, "home.html")
 
 
 def registro(request):
@@ -15,4 +23,15 @@ def registro(request):
     else:
         FormReg= UserCreationForm()
 
-    return render(request, "login/registro.html", {'FormReg': FormReg})
+    return render(request, "registration/registro.html", {'FormReg': FormReg})
+
+
+@staff_member_required
+def administrador(request):
+    return render(request, 'administrador/administrador_central.html')
+
+
+
+@login_required(login_url= '/')
+def usuario(request):
+    return render(request, 'jugador/jugador_central.html')

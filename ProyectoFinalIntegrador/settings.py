@@ -130,6 +130,9 @@ STATIC_URL = '/static/'
 
 STATIC_DIR = (os.path.join(BASE_DIR, "static"),)
 
+STATIC_FILES = [BASE_DIR / 'static', BASE_DIR / 'InicioApp' / 'templates']
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -138,4 +141,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # este creo que es para que no tome el modelo user por defecto
 # AUTH_USER_MODEL = "usuarios.Usuario"
 LOGIN_REDIRECT_URL = '/home/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'

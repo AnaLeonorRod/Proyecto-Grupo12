@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<body>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="tm-main-container">
+      <div class="tm-top-container">
+        <!-- Menu -->
+        <nav id="tmNav" class="tm-nav">
+          <a class="tm-navbar-menu" href="#">Menu</a>
+          <ul class="tm-nav-links">
+            
+            <li class="tm-nav-item">
+              <a
+                rel="tm-nav-link external" href="#"
+                class="tm-nav-link external">Crear Preguntas</a>
+            </li>
+            <li class="tm-nav-item">
+              <a
+              rel="tm-nav-link external" href="#"
+                class="tm-nav-link external">Modificar Preguntas</a>
+            </li>
+            <li class="tm-nav-item">
+              <a
+                href="#"
+                data-linkid="2"
+                data-align="middle"
+                class="tm-nav-link">Ver Estadisticas</a>
+            </li>
+            
+            <li class="tm-nav-item">
+              <a class="tm-nav-link external"
+                href="{% url 'home' %}" data-align="middle"
+                class="">Volver a Inicio</a>
+            </li>
+            
+            <!-- Site header -->
+        <header class="tm-site-header-box tm-bg-dark">
+          <h1 class="tm-site-title">Aniversario Chaco</h1>
+          <p class="mb-0 tm-site-subtitle">Grupo 12, Comision 4</p>
+        </header>
+      </div>
+        </div>
+      </div>
+{% endblock %}
