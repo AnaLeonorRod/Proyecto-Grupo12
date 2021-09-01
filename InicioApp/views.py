@@ -6,9 +6,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 
+from appPreguntas.models import Pregunta
 
 
-@login_required(login_url= '/')
+
+# @login_required(login_url= '/')
 def inicio(request):
     return render(request, "home.html")
 
@@ -19,7 +21,7 @@ def registro(request):
         
         if FormReg.is_valid():
             FormReg.save()
-            return redirect('login')
+            return redirect('home')
     else:
         FormReg= UserCreationForm()
 
@@ -32,6 +34,28 @@ def administrador(request):
 
 
 
-@login_required(login_url= '/')
+#@login_required(login_url= '/')
 def usuario(request):
     return render(request, 'jugador/jugador_central.html')
+
+def agregar(request): 
+    return render(request, 'administrador/agregar_p.html') 
+
+def editar(request): 
+    preg = Pregunta.objects.all()
+    form = preg(instance=Pregunta)
+    
+    return(request, "editar",{'form':form})
+
+def actualizar(request): 
+    preg = Pregunta.objects.all() # debe cambiarse .all() --> .get(pk=id_preg)
+    
+    form = preg(request.POST, instance=Pregunta)
+    if form.es_valid():
+        form.save()
+    preg = Pregunta.objects.all()
+    return(request, "editar",{'form':form})
+
+def ListarPreguntas(request):
+    preguntas=Pregunta.objects.all()
+    return render(request, "listar.html", {'preguntas':preguntas})

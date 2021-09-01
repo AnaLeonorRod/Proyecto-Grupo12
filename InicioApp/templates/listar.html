@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id Pregunta</th>
+      <th scope="col">ENUNCIADO</th>
+      <th scope="col">OPCION 1 RTA</th>
+      <th scope="col">OPCION 2 RTA</th>
+      <th scope="col">OPCION 3 RTA</th>
+      <th scope="col">EDITAR</th>
+      <th scope="col">ELIMINAR</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for preguntas in preg%}
+    <tr>
+      <th scope="row" {{Pregunta.id}}></th>
+      <td>{{ preg.id }}</td>
+      <td>{{ preg.texto }}</td>
+      <td>{{ preg.cuest_id }}</td>
+
+      <td><a class="btn btn-warning" href="#"> EDITAR </a></td>
+      <!-- falta url-->
+      <td><a class="btn btn-danger" href="#"> ELIMINAR </a></td>
+      <!-- falta url-->
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+{% endblock %}
