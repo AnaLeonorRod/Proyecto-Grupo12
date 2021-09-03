@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Inicio
+{% endblock title %}
+
+{% block content %}
+<br>
+    <br>
+        <br>
+            <br>
+                <br>
+                    <section
+                        id="section-jumbotron"
+                        style="background-color: #eee"
+                        class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+                        <div class="container text-center">
+                            <!-- <h1 class="display-1 " style="color: rgb(0, 0, 0)">Bienvenido</h1> -->
+                            
+                            <p class="display-4 d-none d-sm-block">Pon a prueba tus conocimientos</p>
+                            <p class="lead" >Este es un Juego de opción múltiple creado por el Grupo 12, en el cual el jugador podrá elegir la dificultad.</p>
+                            
+                            <p class="lead" style="color: rgb(125, 129, 129)">Para comenzar</p>
+                            <a href="{% url 'login' %}" class="btn btn-lg btn-success">Inicia Sesión</a>
+                        </div>
+                    </section>
+                    
+{% endblock content %}

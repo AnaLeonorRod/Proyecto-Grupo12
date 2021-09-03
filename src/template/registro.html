@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Registro{% endblock title %}
+{% block content %}
+
+
+   <div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+            <div class="card">
+                
+                <form class="box" method="POST" style="color: rgb(0, 0, 0);">
+                   
+                    <h2 style="color:rgb(1, 2, 2)">Crea Cuenta</h2>
+                    
+                         {% csrf_token %}
+						 {{form.as_p}}
+                
+                     <input type="submit" name="ingresar" value="Registrarme" class="btn btn-success"/> <br>
+                     
+                     <a href="{% url 'login' %}" class="btn mt-4 btn-secondary" ></i>Inicia Sesión</a>
+                     <p style=" color:rgb(149, 153, 156)">Si ya tienes una cuenta</p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+      
+{% endblock content %}

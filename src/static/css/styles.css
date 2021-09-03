@@ -1,0 +1,18 @@
+.navbar-light .navbar-brand {
+    color: rgba(238, 228, 228, 0.9);
+}
+
+.box {
+    width: 810px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: -60%;
+    background: #ffffff;
+    border-radius: 40px;
+
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 50px
+}
+

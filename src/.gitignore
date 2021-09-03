@@ -1,0 +1,4 @@
+*.pyc
+src/Proyecto/settings/local.py
+*.rar
+*.zip

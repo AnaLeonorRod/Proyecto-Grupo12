@@ -21,22 +21,6 @@ _Instalar las dependendencias del proyecto (ir a la carpeta de requirements)_
 pip install -r requeriments.txt
 ```
 
-_Crear settings local.py_
-
-from .settings import *
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', # Conector de DB
-        'NAME': 'NombreBaseDeDatos',
-        'USER': 'UsuarioBaseDeDatos',
-        'PASSWORD': 'ContraseñaBaseDeDatos',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}
-```
-
 ## Construido con 🛠️
 
 * [Django]Framework web

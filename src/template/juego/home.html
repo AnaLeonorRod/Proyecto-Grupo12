@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Reglas 
+{% endblock title %}
+
+
+{% block content %}
+{% include "navbar/navbarinicio.html" %}
+
+<div class="container my-4">
+    <div class="jumbotron">
+
+	      <h3 class="text-danger text-center">¡Unas cuestiones antes de comenzar!</h3>
+        <div class="row">
+            <div class="card border-success mx-4 my-4">
+                <div class="card-body">
+                    <h4 class="card-title">Reglas:</h4>
+                    <p class="card">
+                        <ul style="list-style:decimal;">
+                            <li>Las preguntas son de selección múltiple.</li>
+                            <li>Cada pregunta solo se muestra una vez por usuario.</li>                            
+                            <li>Si actualizas la página te contará como respondido.</li>
+                            <li>Al terminar tu Usuario aparecerá en el Top List Mejores Puntajes. </li>
+                        </ul>
+                    </p>
+                    <h4 class="card-title">Diviértete &#128512</h4>
+                    <a href="{% url 'jugar' %}" class="btn btn-success">Iniciar</a>
+                </div> 
+                <div class="card-footer"></div>  
+            </div>
+        </div>  
+
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    
+{% endblock title %}
+
+{% block content %}
+<nav class="navbar navbar-light" style="background-color: #444941;">
+  <div class="container">
+      <a class="btn btn-outline-light" href="{% url 'HomeUsuario' %}" >Inicio</a>
+      <a class="btn btn-outline-light"  href="{% url 'tablero' %}">Top List Mejores Puntajes</a>
+      <a class="btn btn-outline-danger" href= "{% url 'logout_vista' %}">Cerrar Sesion</a>
+    
+      
+  </div>
+</nav>
+{% endblock content %}
