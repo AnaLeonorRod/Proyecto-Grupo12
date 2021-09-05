@@ -6,11 +6,11 @@
 {% endblock title %}
 
 {% block content %}
-<nav class="navbar navbar-light" style="background-color: #444941;">
-  <div class="container">
+<nav class="navbar navbar-light bg-dark p-3">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <a class="btn btn-outline-light" href="{% url 'HomeUsuario' %}" >Inicio</a>
       <a class="btn btn-outline-light"  href="{% url 'tablero' %}">Top List Mejores Puntajes</a>
-      <a type="button" class="btn btn-outline-secondary" href="{% url 'HomeAdministrador' %}">Administrador</a>
+      <a class="btn btn-outline-light" href="{% url 'HomeAdministrador' %}">Administrador</a>
       <a class="btn btn-outline-danger" href= "{% url 'logout_vista' %}">Cerrar Sesion</a>
   </div>
 </nav>

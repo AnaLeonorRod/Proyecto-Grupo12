@@ -11,19 +11,20 @@
         <br>
             <br>
                 <br>
+                <div class="card p-4 m-4">
+                    <div class="card-body p-2">
                     <section
                         id="section-jumbotron"
                         style="background-color: #eee"
                         class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
                         <div class="container text-center">
-                            <!-- <h1 class="display-1 " style="color: rgb(0, 0, 0)">Bienvenido</h1> -->
-                            
-                            <p class="display-4 d-none d-sm-block">Pon a prueba tus conocimientos</p>
-                            <p class="lead" >Este es un Juego de opción múltiple creado por el Grupo 12, en el cual el jugador podrá elegir la dificultad.</p>
+                            <h1 class="display-1 " style="color: rgb(0, 0, 0)"><strong> Bienvenido</strong></h1>
+                            <p class="lead" >Este es un Juego de opción múltiple creado por el Grupo 12.</p>
                             
                             <p class="lead" style="color: rgb(125, 129, 129)">Para comenzar</p>
-                            <a href="{% url 'login' %}" class="btn btn-lg btn-success">Inicia Sesión</a>
+                            <a href="{% url 'login' %}" class="btn btn-lg btn-outline-dark">Inicia Sesión o Registrate</a>
                         </div>
                     </section>
-                    
+                    </div>      
+                </div>
 {% endblock content %}
