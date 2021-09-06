@@ -23,7 +23,7 @@
 		<tbody>
 			{% for user_quiz in usuario_quiz %}
 				<tr>
-					<th>{{forloop.counter}}</th>
+					<th>{% if forloop.counter == 1 %} <h3>&#129351</h3>{% elif forloop.counter == 2 %} <h3>&#129352</h3> {% elif forloop.counter == 3 %} <h3>&#129353</h3>{% else %}{{forloop.counter}}{% endif %}</th>
 					<th>{{user_quiz.usuario.username}}</th>
 					<th>{{user_quiz.puntaje_total}}</th>
 				</tr>
