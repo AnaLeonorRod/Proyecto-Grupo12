@@ -7,7 +7,6 @@
 
 {% block content %}
 
-
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
@@ -16,7 +15,7 @@
                 <div class="card" >
                     <form class="box" method="POST" style="color: rgb(0, 0, 0);">
                         
-                        <h2 style="color:rgb(1, 2, 2)"><strong>Iniciar Sesión</strong></h2>
+                        <h1 class="display-1"  style="font-family: 'Allison', cursive; color:rgb(1, 2, 2)"><strong>Iniciar Sesión</strong></h2>
                         <p style=" color:rgb(149, 153, 156)">Ingresar Usuario y Contraseña</p>
                         {% csrf_token %}
                         {{form.as_p}}
@@ -31,6 +30,7 @@
         </div>
     </div>
 </div>
+
 
 
 {% endblock content %} 
