@@ -13,9 +13,11 @@
             <div class="card">
 
                 <div class="card" >
+                    <div class="animated bounceInLeft">
+
                     <form class="box" method="POST" style="color: rgb(0, 0, 0);">
                         
-                        <h1 class="display-1"  style="font-family: 'Pacifico', cursive; color:rgb(1, 2, 2)"><strong>Iniciar Sesión</strong></h2>
+                        <h1 class="display-1 "  style="font-family: 'Pacifico', cursive; color:rgb(1, 2, 2)"><strong>Iniciar Sesión</strong></h2>
                         <p style=" color:rgb(149, 153, 156)">Ingresar Usuario y Contraseña</p>
                         {% csrf_token %}
                         {{form.as_p}}
@@ -26,6 +28,8 @@
                         <!-- <a href="{% url 'registro' %}" class="btn  btn-secondary" ></i>Crea una cuenta</a> -->
                     </form>
                 </div>
+            </div>
+
             </div>
         </div>
     </div>

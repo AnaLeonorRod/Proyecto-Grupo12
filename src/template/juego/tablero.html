@@ -3,18 +3,19 @@
 {% block content %}
 {% include "navbar/navbarinicio.html" %}
 <div class="container">
-    
-    <div class="row">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+	
+	<div class="row">
+		<div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+		<div class="animated bounceInLeft">
             <div class="card">
                 
-                <form class="box" method="POST" style="color: rgb(0, 0, 0);">
-                   
+				<form class="box" method="POST" style="color: rgb(0, 0, 0);">
+					
                     <h2 class="text-center ">&#127942 <strong>TOP LIST</strong> &#127942</h2>
                     <h2 class="text-center my-4">{{ contar_user }} Jugadores en total </h2>
                     <table class="table table-striped table-bordered">
-		<thead>
-			<tr>
+						<thead>
+							<tr>
 				<th><strong>Posicion</strong></th>
 				<th><strong>Usuario</strong></th>
 				<th><strong>Puntaje</strong></th>
@@ -27,11 +28,12 @@
 					<th>{{user_quiz.usuario.username}}</th>
 					<th>{{user_quiz.puntaje_total}}</th>
 				</tr>
-			{% endfor %}
-			
-		</tbody>
-	</table>
+				{% endfor %}
+				
+			</tbody>
+		</table>
+	</div>
+		
+	</div>
 	
-</div>
-
-{% endblock %}
+	{% endblock %}
