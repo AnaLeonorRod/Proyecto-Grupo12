@@ -6,6 +6,9 @@ from django.http import Http404, HttpResponseRedirect
 from django.core.exceptions import ObjectDoesNotExist
 from .models import QuizUsuario, Pregunta, PreguntasRespondidas, Categoria ,ElegirRespuesta
 from datetime import datetime
+from django.urls import reverse_lazy
+
+from django.contrib.auth.decorators import user_passes_test
 
 
 def inicio(request):
@@ -16,17 +19,17 @@ def inicio(request):
 	return render(request, 'index.html', context)
 
 # Views del Administrador
-def es_admin(user):
-	return user.groups.filter(name='admin').exists()
+# def es_admin(user):
+# 	return user.groups.filter(name='admin').exists()
 
-@login_required()
-@user_passes_test(es_admin)
+
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def HomeAdministrador(request):
 
 	return render(request, 'administrador/home_admin.html')
 
-@login_required()
-@user_passes_test(es_admin)
+# @login_required()
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def crear_categoria(request):
 	categoriaForm=CategoriaForm()
 	if request.method=='POST':
@@ -38,8 +41,9 @@ def crear_categoria(request):
 	return render(request, 'administrador/crear_categoria.html', {'categoriaForm': categoriaForm})
 
 
-@login_required()
-@user_passes_test(es_admin)
+# @login_required()
+# @user_passes_test(es_admin)
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def agregar_pregunta(request):
     preguntaForm=PreguntaForm()
     if request.method=='POST':
@@ -52,8 +56,9 @@ def agregar_pregunta(request):
        
     return render(request,'administrador/agregar_pregunta.html',{'preguntaForm':preguntaForm})
 
-@login_required()
-@user_passes_test(es_admin)
+# @login_required()
+# @user_passes_test(es_admin)
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def agregar_respuesta(request):
 	respuestaForm= RespuestaForm()
 	if request.method=='POST':
@@ -66,20 +71,23 @@ def agregar_respuesta(request):
 	
 	return render(request, 'administrador/agregar_respuesta.html', {'respuestaForm' : respuestaForm})
 
-@login_required()
-@user_passes_test(es_admin)
+# @login_required()
+# @user_passes_test(es_admin)
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def ver_categoria(request):
 	categoria=Categoria.objects.all()
 	return render(request, 'administrador/ver_categoria.html',{'categoria':categoria})
 
-@login_required()
-@user_passes_test(es_admin)
+# @login_required()
+# @user_passes_test(es_admin)
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def ver_preguntas(request):
 	preguntas=Pregunta.objects.all()
 	return render(request, 'administrador/ver_preguntas.html',{'preguntas':preguntas})
 
-@login_required()
-@user_passes_test(es_admin)
+# @login_required()
+# @user_passes_test(es_admin)
+@user_passes_test(lambda u:u.is_staff, login_url=reverse_lazy('HomeUsuario'))
 def ver_respuestas(request):
 	respuesta=ElegirRespuesta.objects.all()
 	return render(request, 'administrador/ver_respuestas.html',{'respuesta':respuesta})

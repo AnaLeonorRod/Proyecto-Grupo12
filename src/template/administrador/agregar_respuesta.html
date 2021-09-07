@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Admin
+{% endblock title %}
+
+
+{% block content %}
+{% include "navbar/navbaradmin.html" %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+            <div class="card">
+
+                <div class="card" >
+                    <form class="box" method="POST" style="color: rgb(0, 0, 0);">
+
+                        <h4 style="font-family: 'Pacifico', cursive; color:rgb(1, 2, 2)"><strong>Crear Respuesta:</strong></h4>
+                        <p class="card">
+                            <ul style="list-style:decimal;">
+                                
+                             <table>
+                                 
+                                 {{respuestaForm.as_p }}
+                                 {% csrf_token %}
+
+                             </table>   
+                            
+                        </p>
+
+                        <button class="btn btn-sm btn-outline-dark" type="submit"> Enviar </button>
+                </div> 
+            </div>
+        </div>
+    </div>  
+</div>
+
+{% endblock content %}
