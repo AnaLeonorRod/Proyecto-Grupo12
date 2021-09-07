@@ -19,7 +19,7 @@ class Pregunta(models.Model):
 	Selec_categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
 	autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	texto = models.CharField(max_length=200,verbose_name='Pregunta')
-	max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', default=10, decimal_places=2, max_digits=6)
+	max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', default=10, decimal_places=2, max_digits=6, null = True)
 	fecha_creacion = models.DateTimeField(auto_now_add=True)
 	
 
@@ -41,7 +41,7 @@ class ElegirRespuesta(models.Model):
 
 class QuizUsuario(models.Model):
 	usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-	puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=0, decimal_places=2, max_digits=10)
+	puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=0, decimal_places=2, max_digits=10, null= True)
 
 
 	def crear_intentos(self, pregunta):

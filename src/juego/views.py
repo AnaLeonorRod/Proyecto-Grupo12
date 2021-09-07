@@ -126,10 +126,10 @@ def jugar(request):
 
 		try:
 			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
+			QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
 		except ObjectDoesNotExist:
 			raise Http404
 
-		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
 
 		return redirect('resultado', pregunta_respondida.pk)
 
