@@ -24,6 +24,5 @@ pip install -r requeriments.txt
 ## Construido con 🛠️
 
 * [Django]Framework web
-* [PostgreSQL]Base de datos
 
 ---
