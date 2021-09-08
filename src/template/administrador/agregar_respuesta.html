@@ -21,14 +21,18 @@
                                 
                              <table>
                                  
-                                 {{respuestaForm.as_p }}
-                                 {% csrf_token %}
+                                <th>
+                                    {{respuestaForm.as_p }}
+                                    {% csrf_token %}
+
+                                </th>
 
                              </table>   
                             
                         </p>
 
                         <button class="btn btn-sm btn-outline-dark" type="submit"> Enviar </button>
+                        <a class="btn btn-sm btn-outline-dark" href="{% url 'HomeAdministrador' %}" >Volver</a>
                 </div> 
             </div>
         </div>

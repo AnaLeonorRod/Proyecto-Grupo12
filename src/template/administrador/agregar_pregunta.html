@@ -19,16 +19,25 @@
                         <h4 style="font-family: 'Pacifico', cursive; color:rgb(1, 2, 2)"><strong>Crear Pregunta:</strong></h4>
                         <p class="card">
                             <ul style="list-style:decimal;">
-                                <table>
-                                    
-                                    {{ preguntaForm }}
+                                <table class="table">
+                                    <tr>
+                                        <th>
+
+                                            {{ preguntaForm }}{% csrf_token %}
+                                        </th>
+
+                                    </tr>
                                 </table>
                             </ul>
                 
                         </p>
                         
                         <button class="btn btn-sm btn-outline-dark" type="submit"> Enviar </button>
+                        <a class="btn btn-sm btn-outline-dark" href="{% url 'HomeAdministrador' %}" >Volver</a>
                     </form>
+                      
+   
+     
                 </div> 
             </div>
         </div>
