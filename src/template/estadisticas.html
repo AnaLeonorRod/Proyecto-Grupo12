@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %} Tabla de puntos {% endblock title %}
+{% block content %} {% include "navbar/navbarinicio.html" %}
+
+<body>
+  <h1>ACA VAN LAS ESTADISTICAS</h1>
+  <div class="container">
+    <table class="table table-striped table-bordered">
+      <th><strong>MI POSICION</strong></th>
+      <th><strong>N° PREGUNTAS CONTESTADAS</strong></th>
+      <th><strong>MI PUNTAJE</strong></th>
+    </table>
+    <table class="table table-striped table-bordered">
+      <!--{% for c in ctx %}-->
+      <tr>
+        <td>{{c.quizUser_id}}</td>
+        <td>{{c.correcta}}</td>
+        <td>{{c.puntaje_obtenido}}</td>
+      </tr>
+      <!--{% endfor %}-->
+    </table>
+  </div>
+</body>
+
+{% endblock %}

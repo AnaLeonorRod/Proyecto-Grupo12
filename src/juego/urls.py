@@ -4,7 +4,7 @@ from .views import (
 			logout_vista,HomeUsuario, jugar,
 			resultado_pregunta,tablero,crear_categoria,agregar_pregunta,
 			agregar_respuesta, HomeAdministrador,ver_categoria,ver_preguntas,
-			ver_respuestas
+			ver_respuestas,ver_estadisticas
 			)
 
 urlpatterns = [
@@ -25,10 +25,5 @@ urlpatterns = [
 	path('ver_categoria/', ver_categoria, name='ver_categoria'),
 	path('ver_preguntas/', ver_preguntas, name='ver_preguntas'),
 	path('ver_respuestas/', ver_respuestas, name='ver_respuestas'),
-
-
-	
-	
-
-	
+	path('estadisticas/', ver_estadisticas, name='estadisticas'),
 ]

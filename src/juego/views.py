@@ -191,6 +191,10 @@ def registro(request):
 
 	return render(request, 'registro.html', context)
 
+def ver_estadisticas(request):
+    ctx = PreguntasRespondidas.objects.filter(quizUser=2)
+    return render(request, 'estadisticas.html', {'ctx': ctx})
+
 
 def logout_vista(request):
 	logout(request)
